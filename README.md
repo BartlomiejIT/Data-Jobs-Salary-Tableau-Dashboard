@@ -20,12 +20,12 @@
 This interactive dashboard, built entirely in **Tableau Public**, provides insights into data science job salaries, platform distribution, and job counts across different countries and job types.
 
 - **Tool Used**: Tableau Public  
-- **Data Source**: `data_job_salary_all.xlsx`
+- **Data Source**: `data_job_salary.xlsx`
 
 ---
 
 ## Workbook File
-The final Tableau workbook is available as **`DataJobsSalaryDashboard.twbx`**.
+The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**.
 
 ---
 
