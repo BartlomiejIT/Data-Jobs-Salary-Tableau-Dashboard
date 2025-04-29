@@ -94,10 +94,10 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
 **Sheet**: `KPI - Median Salary`
 
   - **Metric**:
-  ```Tableau
-  // Median aggregation of Salary Year Avg
-  MEDIAN([Salary Year Avg])
-  ```
+    ```Tableau
+    // Median aggregation of Salary Year Avg
+    MEDIAN([Salary Year Avg])
+    ```
   - **Purpose**: Display the median annual salary for the selected filters, providing a quick overview of central salary tendency.
 
 ---
