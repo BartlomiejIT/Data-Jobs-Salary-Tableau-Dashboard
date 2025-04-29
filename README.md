@@ -1,6 +1,6 @@
 # Data Jobs Salary Dashboard
 
-![image](https://github.com/user-attachments/assets/aacec42a-3525-4e5f-b16e-7de2b438df85)
+![image](https://github.com/user-attachments/assets/f3b9e493-e78d-4bfd-9a7d-f7ff5fcf866a)
 
 ---
 
@@ -38,6 +38,8 @@ The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**
    
    - **Visualization**: Horizontal bar chart of median annual salaries for each job title.  
    - **Calculation**: Default Tableau median aggregation on `[Salary Year Avg]`.
+
+---
    
 ### Map of Median Salaries by Country
 **Sheet**: `Map - Job Country`:
@@ -46,6 +48,8 @@ The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**
    
    - **Visualization**: Choropleth world map showing median salaries by country.  
    - **Calculation**: Median aggregation on `[Salary Year Avg]` with geographic role on `[Job Country]`.
+
+---
 
 ### Job Count by Type
 **Sheet**: `Chart - Schedule Type`:
@@ -58,6 +62,8 @@ The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**
      - Exclude NULL schedule types.  
      - Display certainly schedule types by median salary via Top filter.
 
+---
+
 ### Job Schedule Type Count
 **Sheet**: `KPI - Job Count`:
    
@@ -67,6 +73,8 @@ The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**
      // Count of distinct job postings
      COUNT([Job Title Short])
      ```
+
+---
 
 ### Top Job Platform
 **Sheet**: `KPI - Top Platform`:
