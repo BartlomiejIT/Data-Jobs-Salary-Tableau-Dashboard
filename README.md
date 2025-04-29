@@ -90,16 +90,15 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
 
 ---
 
-### Job Schedule Type Count
-   **Sheet**: `KPI - Job Count`:
-   
-   - **Visualization**: KPI showing total job postings by schedule type.  
-   - **Metric**:
-     ```tableau
-     // Count of distinct job postings
-     COUNT([Job Title Short])
-     ```
-   - **Purpose**: Display total number of job postings based on current filters.
+### Median Salary
+**Sheet**: `KPI - Median Salary`
+
+  - **Metric**:
+  ```Tableau
+  // Median aggregation of Salary Year Avg
+  MEDIAN([Salary Year Avg])
+  ```
+  - **Purpose**: Display the median annual salary for the selected filters, providing a quick overview of central salary tendency.
 
 ---
 
@@ -135,6 +134,19 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
       IFNULL([Top Platform by Country], [Clean Job Platform])
       ```
    - **Purpose**: Identify the platform with the highest number of job postings, either within the selected country or globally.
+
+---
+
+### Job Schedule Type Count
+   **Sheet**: `KPI - Job Count`:
+   
+   - **Visualization**: KPI showing total job postings by schedule type.  
+   - **Metric**:
+     ```tableau
+     // Count of distinct job postings
+     COUNT([Job Title Short])
+     ```
+   - **Purpose**: Display total number of job postings based on current filters.
 
 ---
 
