@@ -7,7 +7,7 @@
 ## Table of Contents
 - [Overview](#overview)
 - [Key Features](#key-features)
-- [Project Details](#project-details)
+- [Tools](#tools)
 - [Data Source](#data-source)
 - [Dashboard Components](#dashboard-components)
 - [Technical Implementation](#technical-implementation)
@@ -33,15 +33,13 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
 
 ---
 
-## Project Details
+## Tools
 
-| Attribute       | Specification        |
-|----------------|-----------------------|
-| Tool           | Tableau Public        |
-| Development    | 1 hour                |
-| Last Updated   | April 2025            |
-| Status         | Actively Maintained   |
-| File           | `Data_Jobs_Salary_Dashboard.twbx` |
+- **Tableau Public**: Design, build, and publish interactive dashboards.
+
+- **Microsoft Excel**: Clean, transform, and validate raw salary data in .xlsx format.
+
+- **Markdown**: Documentation formatting for README and project overview.
 
 ---
 
@@ -63,9 +61,9 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
    
    ![image](https://github.com/user-attachments/assets/cb9407e1-fde8-497a-a3ba-6d035dbe1722)
 
-   **Type**: Horizontal bar chart
-   **Metric**: Median of [Salary Year Avg]
-   **Purpose**: Compare median annual salaries across different job titles.
+   - **Type**: Horizontal bar chart
+   - **Metric**: Median of [Salary Year Avg]
+   - **Purpose**: Compare median annual salaries across different job titles.
 
 ---
    
@@ -74,9 +72,9 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
    
 ![image](https://github.com/user-attachments/assets/59330309-5253-4244-aaa7-b70f7f34d2bd)
 
-   **Type**: Choropleth map
-   **Metric**: Median of [Salary Year Avg]
-   **Purpose**: Visualize salary variation across countries.
+   - **Type**: Choropleth map
+   - **Metric**: Median of [Salary Year Avg]
+   - **Purpose**: Visualize salary variation across countries.
 
 ---
 
@@ -85,10 +83,10 @@ Interactive Tableau dashboard analyzing global salary trends, job distribution, 
    
    ![image](https://github.com/user-attachments/assets/a297cbb1-6c25-4692-8423-da60a4493d4d)
    
-   **Type**: Horizontal bar chart
-   **Metric**: Count of postings grouped by [Job Schedule Type]
-   **Filters**: Exclude null schedule types; apply top N filter by median salary.
-   **Purpose**: Analyze which schedule types are most common and their salary ranges.
+   - **Type**: Horizontal bar chart
+   - **Metric**: Count of postings grouped by [Job Schedule Type]
+   - **Filters**: Exclude null schedule types; apply top N filter by median salary.
+   - **Purpose**: Analyze which schedule types are most common and their salary ranges.
 
 ---
 
