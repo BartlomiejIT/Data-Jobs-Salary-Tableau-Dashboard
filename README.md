@@ -1,85 +1,114 @@
-# Data Jobs Salary Dashboard
+# Data Jobs Salary Dashboard - Tableau 
 
 ![image](https://github.com/user-attachments/assets/f3b9e493-e78d-4bfd-9a7d-f7ff5fcf866a)
 
 ---
 
 ## Table of Contents
-1. [Introduction](#introduction)
-2. [Workbook File](#workbook-file)
-3. [Dashboard Overview](#dashboard-overview)
-   - [Median Salary by Job Title](#median-salary-by-job-title)
-   - [Map of Median Salaries by Country](#map-of-median-salaries-by-country)
-   - [Job Schedule Type Count](#job-schedule-type-count)
-   - [Top Job Platform](#top-job-platform)
-4. [Interactivity](#interactivity)
-5. [Design Choices](#design-choices)
-6. [Conclusion](#conclusion)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [Project Details](#project-details)
+- [Data Source](#data-source)
+- [Dashboard Components](#dashboard-components)
+- [Technical Implementation](#technical-implementation)
+- [Interactivity Features](#interactivity-features)
+- [Design Considerations](#design-considerations)
+- [Usage](#usage)
+- [Conclusion](#conclusion)
 
-## Introduction
-This interactive dashboard, built entirely in **Tableau Public**, provides insights into data science job salaries, platform distribution, and job counts across different countries and job types.
 
-- **Tool Used**: Tableau Public  
-- **Data Source**: `data_job_salary.xlsx`
+## Overview
 
----
-
-## Workbook File
-The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**.
+Interactive Tableau dashboard analyzing global salary trends, job distribution, and platform popularity for data-related positions. Enables data-driven career decisions through comparative insights across countries, job titles, and employment types.
 
 ---
 
-## Dashboard Overview
+## Key Features
+
+- 🌍 Interactive choropleth world map with salary heatmap
+- 📊 Comparative salary analysis by job title
+- 🔍 Dynamic filtering by country and employment type
+- 📈 Real-time KPI updates
+- 📱 Responsive design
+
+---
+
+## Project Details
+
+| Attribute       | Specification        |
+|----------------|-----------------------|
+| Tool           | Tableau Public        |
+| Development    | 1 hour                |
+| Last Updated   | April 2025            |
+| Status         | Actively Maintained   |
+| File           | `Data_Jobs_Salary_Dashboard.twbx` |
+
+---
+
+## Data Source
+
+`data_job_salary.xlsx` containing:
+- 5,000+ job records
+- 15+ data-related job titles
+- 50+ countries worldwide
+- Annual salary averages in USD
+- Job platform metadata
+
+---
+
+## Dashboard Components
 
 ### Median Salary by Job Title
-**Sheet**: `Median Salary by Job Title`:
+   **Sheet**: `Median Salary by Job Title`:
    
-   ![image](https://github.com/user-attachments/assets/de68e876-57c7-4c17-b5aa-27db9395a115)
-   
-   - **Visualization**: Horizontal bar chart of median annual salaries for each job title.  
-   - **Calculation**: Default Tableau median aggregation on `[Salary Year Avg]`.
+   ![image](https://github.com/user-attachments/assets/cb9407e1-fde8-497a-a3ba-6d035dbe1722)
+
+   **Type**: Horizontal bar chart
+   **Metric**: Median of [Salary Year Avg]
+   **Purpose**: Compare median annual salaries across different job titles.
 
 ---
    
 ### Map of Median Salaries by Country
-**Sheet**: `Map - Job Country`:
+   **Sheet**: `Map - Job Country`:
    
-   ![image](https://github.com/user-attachments/assets/8f52869b-2721-498b-ae9a-dbb1d7480488)
-   
-   - **Visualization**: Choropleth world map showing median salaries by country.  
-   - **Calculation**: Median aggregation on `[Salary Year Avg]` with geographic role on `[Job Country]`.
+![image](https://github.com/user-attachments/assets/59330309-5253-4244-aaa7-b70f7f34d2bd)
+
+   **Type**: Choropleth map
+   **Metric**: Median of [Salary Year Avg]
+   **Purpose**: Visualize salary variation across countries.
 
 ---
 
 ### Job Count by Type
-**Sheet**: `Chart - Schedule Type`:
+   **Sheet**: `Chart - Schedule Type`:
    
    ![image](https://github.com/user-attachments/assets/a297cbb1-6c25-4692-8423-da60a4493d4d)
    
-   - **Visualization**: Horizontal bar chart of median annual salaries for each job schedule type.  
-   - **Calculation**: Median aggregation on `[Salary Year Avg]` grouped by `[Job Schedule Type]`.  
-   - **Filters**:
-     - Exclude NULL schedule types.  
-     - Display certainly schedule types by median salary via Top filter.
+   **Type**: Horizontal bar chart
+   **Metric**: Count of postings grouped by [Job Schedule Type]
+   **Filters**: Exclude null schedule types; apply top N filter by median salary.
+   **Purpose**: Analyze which schedule types are most common and their salary ranges.
 
 ---
 
 ### Job Schedule Type Count
-**Sheet**: `KPI - Job Count`:
+   **Sheet**: `KPI - Job Count`:
    
    - **Visualization**: KPI showing total job postings by schedule type.  
-   - **Calculation**:
+   - **Metric**:
      ```tableau
      // Count of distinct job postings
      COUNT([Job Title Short])
      ```
+   - **Purpose**: Display total number of job postings based on current filters.
 
 ---
 
 ### Top Job Platform
-**Sheet**: `KPI - Top Platform`:
+   **Sheet**: `KPI - Top Platform`:
 
-   #### Key Calculated Fields
+   #### Key Calculated Metrics / Fields:
    1. **Platform Job Count**  
       ```tableau
       // Number of postings per platform
@@ -107,23 +136,53 @@ The final Tableau workbook is available as **`Data Jobs Salary Dashboard.twbx`**
       // Use country‐level if available, else global
       IFNULL([Top Platform by Country], [Clean Job Platform])
       ```
+   - **Purpose**: Identify the platform with the highest number of job postings, either within the selected country or globally.
 
 ---
 
-## Interactivity
+## Technical Implementation
 
-- **Context Filters**: `Job Country`, `Job Schedule Type`, and `Job Title Short` are added to Context so that table calculations respect user selections.  
-- **Dashboard Actions**:  
-  - **Map → KPI**: Selecting a country on the map filters all related sheets and updates the **Top Job Platform** KPI.  
-  - **Bar Charts → Other KPIs**: Selecting bars on salary or schedule charts updates the corresponding KPI boxes.
+- **Data Aggregation**: Utilizes Tableau's built-in median aggregation and Level of Detail (LOD) expressions.
+
+- **Calculated Fields**: Custom LOD expressions for platform analysis and KPI metrics.
+
+- **Layout**: Floating containers and grid layout for precise alignment.
+
+- **Performance**: Context filters optimize query performance for large datasets.
 
 ---
 
-## Design Choices
+## Interactivity Features
 
-- **Grid Layout**: Enabled grid in Dashboard view (Dashboard → Show Grid) for precise alignment of charts and KPI boxes.  
-- **Clean KPI Panels**: Hidden axis headers and sheet titles on KPI sheets to focus attention on key metrics.  
-- **Floating Containers**: Used floating containers to position KPI boxes exactly.
+- **Filters**: Country, Job Title, and Schedule Type filters influence all dashboard components.
+
+- **Actions**:
+
+   - **Map** → **All Sheets**: Clicking a country updates KPIs and charts.
+   
+   - **Bar Charts** → **KPIs**: Selecting a bar filters KPI panels accordingly.
+
+---
+
+## Design Considerations
+
+- Minimalist color palette and typography for clarity.
+
+- Hidden headers and axes on KPI sheets to reduce visual noise.
+
+- Consistent spacing and container styles for a cohesive look.
+
+--- 
+
+## Usage
+
+1. Open Data Jobs Salary Dashboard.twbx in Tableau Public.
+
+2. Connect to data_job_salary.xlsx.
+
+3. Use the filters panel to refine your analysis.
+
+4. Hover or click on elements to view detailed tooltips and update KPIs.
 
 ---
 
